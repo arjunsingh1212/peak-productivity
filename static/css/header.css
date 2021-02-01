@@ -1,0 +1,46 @@
+html {
+  overflow-x: hidden;
+}
+#title {
+    background-color:#56acf7;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    line-height: 1.5;
+    color: #23689b;
+}
+
+.navbar-brand {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 2rem;
+}
+
+.container-fluid {
+    padding: 3% 5% 7% 7%;
+}
+
+.heading {
+    padding: 2% 0% 0% 3% ;
+}
+
+body {
+    font-family: 'Montserrat';
+}
+
+button {
+    margin: 1%;
+}
+
+.navbar {
+    padding-bottom: 3%;
+}
+
+img {
+  display: inline-block;
+  max-width: 99%;
+}
+
+
+ 

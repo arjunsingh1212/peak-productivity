@@ -1,0 +1,34 @@
+ 
+
+  /* Agenda */
+  #agenda {
+    background-color: #ff9a8c;
+  }
+
+  .agenda-box {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    padding: 1%;
+  }
+
+  .heading-agenda {
+    padding: 3% 0%;
+    color: #fa5540;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 3rem;
+  }
+
+  .agenda-button {
+    min-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #ff9a8c;
+    color: #fff;
+    font-size: 30px;
+    padding-bottom: 6px;
+    border-width: 0;
+  }

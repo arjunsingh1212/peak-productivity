@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>Peak Productivity</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='description' content="A web application that digitalizes the time management techniques and helps users effeciently do their work.">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/pomodoro.css">
+  <link rel="stylesheet" href="css/eisenhower.css">
+  <link rel="stylesheet" href="css/agenda.css">
+  <link rel="stylesheet" href="css/keeptrack.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <!-- Title Icon -->
+  <link rel="icon" href="images/ppicon.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/c9f4aa9cc0.js" crossorigin="anonymous"></script>
+
+  <!-- Pomodoro JS -->
+  <script src="js/main.js"></script>
+
+</head>
+
+
+<body onload="template()">
+
+  <section id="title">
+    <!-- Nav Bar -->
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#title">P.E.A.K. Productivity</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#title">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pomodoro">Pomodoro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#eisenhower">EisenHower</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#agenda">Agenda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#keeptrack">KeepTrack</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Account
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Sign In</a>
+                <a class="dropdown-item" href="#">Sign Out</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Settings</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Title -->
+      <div class="row">
+        <div class="col-lg-6 heading">
+          <h1>Take your Daily Productivity to the Next Level.</h1>
+          <button type="button" class="btn btn-lg btn-outline-light">Get Started <i class="fas fa-trophy"></i></i></button>
+        </div>
+        <div class="col-lg-6">
+            <img src="images/calendar.gif" alt="calendar-mockup">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Pomodoro -->
+  <section id="pomodoro">
+    <div class="container">
+      <!-- Heading -->
+      <h1 class="text-center heading-pomodoro">Pomodoro</h1>
+      <!-- Main Timer -->
+      <div class="container timer">
+        <div class="row row-pomo">
+          <div class="col-5">
+            <h4 id="minutes"></h4>
+          </div>
+          <div class="col-2">
+            <h4>:</h4>
+          </div>
+          <div class="col-5">
+            <h4 id="seconds"></h4>
+          </div>
+        </div>
+      </div>
+      <!-- Finished Message -->
+      <div class="my-5">
+        <h3 id="done" class="text-center"></h3>
+      </div>
+      <!-- Start Button and reset button-->
+      <div class="conatiner d-flex justify-content-center">
+        <span class="btn-pomodoro" onclick="start_timer()">
+          <i class="fas fa-play fa-2x"></i>
+        </span>
+        <a class="btn-pomodoro" onclick="stop_timer()"><i class="fas fa-redo-alt fa-2x"></i></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- EisenHower -->
+  <section id="eisenhower" class="eisen-body">
+    <div class="conatiner">
+      <h1 class="text-center eisen-head">EisenHower</h1>
+      <div class="container-fluid eisen-container">
+        <div class="row eisen-row">
+          <div class="col-lg-4  eisen-left">
+            <div class="eisen-box eisen-heading">
+              <h1 class="eisen-h1 eisen-00"> Urgent && Imporant </h1>
+            </div>
+            <div class="eisen-box eisen-00">
+              <% for(var i=0;i<newListItems00.length;i++){ %>
+              <form class="eisen-form" action="/delete" method="POST">
+                <div class="eisen-item">
+                  <input type="checkbox" name="checkbox" value=<%= newListItems00[i]._id %> onChange="this.form.submit()">
+                  <p class="eisen-p">
+                    <%= newListItems00[i].name %>
+                  </p>
+                </div>
+              </form>
+              <% } %>
+              <form class="eisen-form" action="/" method="POST">
+                <input type="text" name="newItem" placeholder="New Value" autocomplete="off">
+                <button class="eisen-button" type="submit" name="button" value="00">+</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4 eisen-right">
+            <div class="eisen-box eisen-heading">
+              <h1 class="eisen-h1 eisen-01"> !Urgent && Imporant </h1>
+            </div>
+            <div class="eisen-box eisen-01">
+              <% for(var i=0;i<newListItems01.length;i++){ %>
+              <form class="eisen-form" action="/delete" method="POST">
+                <div class="eisen-item">
+                  <input type="checkbox" name="checkbox" value=<%= newListItems01[i]._id %> onChange="this.form.submit()">
+                  <p class="eisen-p">
+                      <%= newListItems01[i].name %>
+                  </p>
+                </div>
+              </form>
+              <% } %>
+              <form class="eisen-form" action="/" method="POST">
+                <input type="text" name="newItem" placeholder="New Value" autocomplete="off">
+                <button class="eisen-button" type="submit" name="button" value="01">+</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid eisen-container">
+        <div class="row eisen-row">
+          <div class="col-lg-4">
+            <div class="eisen-box eisen-heading">
+              <h1 class="eisen-h1 eisen-10"> Urgent && !Imporant </h1>
+            </div>
+            <div class="eisen-box eisen-10">
+              <% for(var i=0;i<newListItems10.length;i++){ %>
+              <form class="eisen-form" action="/delete" method="POST">
+                <div class="eisen-item">
+                  <input type="checkbox" name="checkbox" value=<%= newListItems10[i]._id %> onChange="this.form.submit()">
+                  <p class="eisen-p">
+                      <%= newListItems10[i].name %>
+                  </p>
+                </div>
+              </form>
+              <% } %>
+              <form class="eisen-form" action="/" method="POST">
+                <input type="text" name="newItem" placeholder="New Value" autocomplete="off">
+                <button class="eisen-button" type="submit" name="button" value="10">+</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="eisen-box eisen-heading">
+              <h1 class="eisen-h1 eisen-11"> !Urgent && !Imporant </h1>
+            </div>
+            <div class="eisen-box eisen-11">
+              <% for(var i=0;i<newListItems11.length;i++){ %>
+              <form class="eisen-form" action="/delete" method="POST">
+                <div class="eisen-item">
+                  <input type="checkbox" name="checkbox" value=<%= newListItems11[i]._id %> onChange="this.form.submit()">
+                  <p class="eisen-p">
+                      <%= newListItems11[i].name %>
+                  </p>
+                </div>
+              </form>
+              <% } %>
+              <form class="eisen-form" action="/" method="POST">
+                <input type="text" name="newItem" placeholder="New Value" autocomplete="off">
+                <button class="eisen-button" type="submit" name="button" value="11">+</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- Agenda -->
+  <section id="agenda">
+    <div class="container-fluid">
+      <h1 class="text-center heading-agenda">Agenda</h1>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="agenda-box eisen-heading">
+            <h1 class="eisen-h1"> <%= kindOfDay %> </h1>
+          </div>
+          <div class="agenda-box">
+            <% for(var i=0;i<agendaItems.length;i++){ %>
+            <form class="eisen-form" action="/delete" method="POST">
+              <div class="eisen-item">
+                <input type="checkbox" name="checkbox" value=<%= agendaItems[i]._id %> onChange="this.form.submit()">
+                <p class="eisen-p">
+                  <%= agendaItems[i].name %> &nbsp; &nbsp;
+                    <%= agendaItems[i].time_start %> &nbsp;
+                    <%= agendaItems[i].date %>
+                </p>
+              </div>
+            </form>
+            <% } %>
+            <form class="eisen-form" action="/addAgenda" method="POST">
+              <input type="text" name="newItem" placeholder="New Value" autocomplete="off">
+              <input type="date" name="date">
+              <input type="time" name="time">
+              <button class="agenda-button" type="submit" name="button">+</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- KeepTrack -->
+  <section id="keeptrack">
+    <div class="container-fluid">
+      <h1 class="text-center heading-keeptrack">KeepTrack</h1>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="keeptrack-box eisen-heading">
+            <h1 class="eisen-h1"> <%= kindOfDay %> </h1>
+          </div>
+          <div class="keeptrack-box">
+            <% for(var i=0;i<keepItems.length;i++){ %>
+              <form class="eisen-form" action="/delete" method="POST">
+                <div class="eisen-item">
+                  <input type="checkbox" name="checkbox" value=<%= keepItems[i]._id %> onChange="this.form.submit()">
+                  <p class="eisen-p">
+                    <%= keepItems[i].name %> &nbsp; &nbsp;
+                    <%= keepItems[i].time_start %> &nbsp;
+                    <%= keepItems[i].time_end %>
+                  </p>
+                </div>
+              </form>
+              <% } %>
+            <form class="eisen-form" action="/addKeep" method="POST">
+              <input type="text" name="newItem" placeholder="New Value" autocomplete="off">
+              <br>
+              <label>Start Time</label>
+              <input type="time" name="timeS">
+              <label>End Time</label>
+              <input type="time" name="timeE">
+              <button class="keeptrack-button" type="submit" name="button">+</button>
+            </form>
+          </div>
+        </div>
+        <form class="keep-form" action="/download", method="POST">
+          <button type="submit" class="btn btn-lg btn-outline-light keeptrack-button-download">Download Current Track Record and Reset</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="row">
+      <div class="col-lg-10 copy-right">
+        <ul class="list-inline text-center">
+          <li class="list-inline-item">
+            <a href="https://codeforces.com/profile/arjun_singh12">
+              <span class="fa-stack fa-lg  footer-icons">
+                <i class="fa fa-code"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://www.facebook.com/people/Arjun-Singh/100021213789739">
+              <span class="fa-stack fa-lg  footer-icons">
+                <i class="fa fa-facebook"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="https://github.com/arjunsingh1212">
+              <span class="fa-stack fa-lg footer-icons">
+                <i class="fa fa-github"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <p class="text-center">© Copyright 2021 PeakProductivity</p>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="images/thanks.gif">
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

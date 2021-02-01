@@ -1,0 +1,67 @@
+/* Pomodoro */
+#pomodoro {
+    background-color: #845ec2;
+    margin-top: 0%;
+    padding-top: 0%;
+    padding-bottom: 5%;
+}
+
+.heading-pomodoro {
+    padding: 3% 0%;
+    color: #351f39;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 3rem;
+  }
+  
+  h4 {
+      font-size: 3rem;
+  }
+  
+  /* Countdown timer */
+  .timer {
+    color: #ffffff;
+    font-family: 'Syne Mono', monospace;
+    text-align: center;
+    width: 20rem;
+    height: 20rem;
+    border: 5px solid #fff;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .row-pomo {
+    width: 100%;
+  }
+  
+.btn-pomodoro {
+    padding: 0% 1% 2% 1%;
+}
+  
+  /* play and reset icons */
+  .fa-play,
+  .fa-redo-alt {
+    color: #e3f6f5;
+    border: 2px solid transparent;
+    padding: 1rem;
+    border-radius: 2rem;
+  }
+  
+  .fa-play:hover,
+  .fa-redo-alt:hover {
+    color: #bae8e8;
+    border: 2px solid #bae8e8;
+    transition: 0.3s ease;
+  }
+  
+  /* Dynamic class */
+  /* Make the message visible */
+  .show_message {
+    display: block;
+    padding: 1rem 0;
+    color: #272343;
+    background: #e3f6f5;
+    border-radius: 0.5rem;
+    transition: 0.5s ease;
+  }

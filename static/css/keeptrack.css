@@ -1,0 +1,43 @@
+  /* KeepTrack */
+
+#keeptrack {
+    background-color: cadetblue;
+  }
+
+  .keeptrack-box {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    padding: 1%;
+  }
+
+  .heading-keeptrack {
+    padding: 3% 0%;
+    color:rgb(0, 95, 99);
+    font-family: 'Londrina Solid', cursive;
+    font-size: 3rem;
+  }
+
+  .keeptrack-button {
+    min-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: cadetblue;
+    color: #fff;
+    font-size: 30px;
+    padding-bottom: 6px;
+    border-width: 0;
+  }
+
+  .keeptrack-button-download {
+    margin: auto auto;
+    text-align: center;
+  }
+
+  .keep-form {
+    display:block;
+    margin: auto;
+  }

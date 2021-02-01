@@ -1,6 +1,5 @@
   /* KeepTrack */
-
-#keeptrack {
+  #keeptrack {
     background-color: cadetblue;
   }
 
@@ -14,8 +13,8 @@
   }
 
   .heading-keeptrack {
-    padding: 3% 0%;
-    color:rgb(0, 95, 99);
+    padding: 2% 0%;
+    color: rgb(0, 95, 99);
     font-family: 'Londrina Solid', cursive;
     font-size: 3rem;
   }
@@ -38,6 +37,6 @@
   }
 
   .keep-form {
-    display:block;
+    display: block;
     margin: auto;
   }

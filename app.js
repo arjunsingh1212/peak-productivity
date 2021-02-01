@@ -208,7 +208,7 @@ app.post("/download", function(request, response) {
     });
   }
 
-  fs.appendFile(__dirname + '/views/today.ejs', '<form action="/", method="GET"> <button type="submit"8888888888888888888888888888888888>Go Home</button></form>', function(err) {
+  fs.appendFile(__dirname + '/views/today.ejs', '<form action="/", method="GET"> <button type="submit">Go Home</button></form>', function(err) {
     if (err) throw err;
   });
 
@@ -226,9 +226,9 @@ app.get("/download", function(request, response) {
   response.render("today");
 })
 
-let port=process.env.PORT;
-if(port==null || port==""){
-  port=3000;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
 }
 
 app.listen(port, function() {

@@ -11,16 +11,17 @@ function template() {
   document.getElementById("seconds").innerHTML = session_seconds;
 }
 
-var reset=false;
+var reset = false;
+
 function stop_timer() {
   click_sound.play();
-  reset=true;
+  reset = true;
 }
 
 function start_timer() {
-  reset=false;
+  reset = false;
   click_sound.play();
-  document.getElementById("done").innerHTML ="";
+  document.getElementById("done").innerHTML = "";
   document.getElementById("done").classList.remove("show_message");
   // Change the minutes and seconds to starting time
   session_minutes = 24;
@@ -46,7 +47,7 @@ function start_timer() {
     session_seconds = session_seconds - 1;
     document.getElementById("seconds").innerHTML = session_seconds;
 
-    if(reset === true){
+    if (reset === true) {
       clearInterval(minutes_interval);
       clearInterval(seconds_interval);
       document.getElementById("minutes").innerHTML = "25";

@@ -81,7 +81,7 @@
           <button type="button" class="btn btn-lg btn-outline-light">Get Started <i class="fas fa-trophy"></i></i></button>
         </div>
         <div class="col-lg-6">
-            <img src="images/calendar.gif" alt="calendar-mockup">
+          <img src="images/calendar.gif" alt="calendar-mockup">
         </div>
       </div>
     </div>
@@ -126,9 +126,9 @@
   <section id="eisenhower" class="eisen-body">
     <div class="conatiner">
       <h1 class="text-center eisen-head">EisenHower</h1>
-      <div class="container-fluid eisen-container">
-        <div class="row eisen-row">
-          <div class="col-lg-4  eisen-left">
+      <div class="container-fluid" style="padding-bottom: 1%">
+        <div class="row">
+          <div class="col-lg-6" style="padding-bottom: 1%">
             <div class="eisen-box eisen-heading">
               <h1 class="eisen-h1 eisen-00"> Urgent && Imporant </h1>
             </div>
@@ -149,7 +149,7 @@
               </form>
             </div>
           </div>
-          <div class="col-lg-4 eisen-right">
+          <div class="col-lg-6" style="padding-bottom: 1%">
             <div class="eisen-box eisen-heading">
               <h1 class="eisen-h1 eisen-01"> !Urgent && Imporant </h1>
             </div>
@@ -159,7 +159,7 @@
                 <div class="eisen-item">
                   <input type="checkbox" name="checkbox" value=<%= newListItems01[i]._id %> onChange="this.form.submit()">
                   <p class="eisen-p">
-                      <%= newListItems01[i].name %>
+                    <%= newListItems01[i].name %>
                   </p>
                 </div>
               </form>
@@ -172,9 +172,9 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid eisen-container">
-        <div class="row eisen-row">
-          <div class="col-lg-4">
+      <div class="container-fluid" style="padding-bottom: 1%">
+        <div class="row">
+          <div class="col-lg-6" style="padding-bottom: 1%">
             <div class="eisen-box eisen-heading">
               <h1 class="eisen-h1 eisen-10"> Urgent && !Imporant </h1>
             </div>
@@ -184,7 +184,7 @@
                 <div class="eisen-item">
                   <input type="checkbox" name="checkbox" value=<%= newListItems10[i]._id %> onChange="this.form.submit()">
                   <p class="eisen-p">
-                      <%= newListItems10[i].name %>
+                    <%= newListItems10[i].name %>
                   </p>
                 </div>
               </form>
@@ -195,7 +195,7 @@
               </form>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-6" style="padding-bottom: 1%;">
             <div class="eisen-box eisen-heading">
               <h1 class="eisen-h1 eisen-11"> !Urgent && !Imporant </h1>
             </div>
@@ -205,7 +205,7 @@
                 <div class="eisen-item">
                   <input type="checkbox" name="checkbox" value=<%= newListItems11[i]._id %> onChange="this.form.submit()">
                   <p class="eisen-p">
-                      <%= newListItems11[i].name %>
+                    <%= newListItems11[i].name %>
                   </p>
                 </div>
               </form>
@@ -237,8 +237,8 @@
                 <input type="checkbox" name="checkbox" value=<%= agendaItems[i]._id %> onChange="this.form.submit()">
                 <p class="eisen-p">
                   <%= agendaItems[i].name %> &nbsp; &nbsp;
-                    <%= agendaItems[i].time_start %> &nbsp;
-                    <%= agendaItems[i].date %>
+                  <%= agendaItems[i].time_start %> &nbsp;
+                  <%= agendaItems[i].date %>
                 </p>
               </div>
             </form>
@@ -267,30 +267,32 @@
           </div>
           <div class="keeptrack-box">
             <% for(var i=0;i<keepItems.length;i++){ %>
-              <form class="eisen-form" action="/delete" method="POST">
-                <div class="eisen-item">
-                  <input type="checkbox" name="checkbox" value=<%= keepItems[i]._id %> onChange="this.form.submit()">
-                  <p class="eisen-p">
-                    <%= keepItems[i].name %> &nbsp; &nbsp;
-                    <%= keepItems[i].time_start %> &nbsp;
-                    <%= keepItems[i].time_end %>
-                  </p>
-                </div>
-              </form>
-              <% } %>
+            <form class="eisen-form" action="/delete" method="POST">
+              <div class="eisen-item">
+                <input type="checkbox" name="checkbox" value=<%= keepItems[i]._id %> onChange="this.form.submit()">
+                <p class="eisen-p">
+                  <%= keepItems[i].name %> &nbsp; &nbsp;
+                  <%= keepItems[i].time_start %> &nbsp;
+                  <%= keepItems[i].time_end %>
+                </p>
+              </div>
+            </form>
+            <% } %>
             <form class="eisen-form" action="/addKeep" method="POST">
               <input type="text" name="newItem" placeholder="New Value" autocomplete="off">
               <br>
               <label>Start Time</label>
               <input type="time" name="timeS">
+              <br>
               <label>End Time</label>
               <input type="time" name="timeE">
+              <br>
               <button class="keeptrack-button" type="submit" name="button">+</button>
             </form>
           </div>
         </div>
-        <form class="keep-form" action="/download", method="POST">
-          <button type="submit" class="btn btn-lg btn-outline-light keeptrack-button-download">Download Current Track Record and Reset</button>
+        <form class="keep-form" action="/download" , method="POST">
+          <button type="submit" class="btn btn-lg btn-outline-light keeptrack-button-download">Download Current Track and Reset</button>
         </form>
       </div>
     </div>
@@ -298,35 +300,37 @@
 
   <!-- Footer -->
   <footer id="footer">
-    <div class="row">
-      <div class="col-lg-10 copy-right">
-        <ul class="list-inline text-center">
-          <li class="list-inline-item">
-            <a href="https://codeforces.com/profile/arjun_singh12">
-              <span class="fa-stack fa-lg  footer-icons">
-                <i class="fa fa-code"></i>
-              </span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://www.facebook.com/people/Arjun-Singh/100021213789739">
-              <span class="fa-stack fa-lg  footer-icons">
-                <i class="fa fa-facebook"></i>
-              </span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://github.com/arjunsingh1212">
-              <span class="fa-stack fa-lg footer-icons">
-                <i class="fa fa-github"></i>
-              </span>
-            </a>
-          </li>
-        </ul>
-        <p class="text-center">© Copyright 2021 PeakProductivity</p>
-      </div>
-      <div class="col-lg-2 text-center">
-        <img src="images/thanks.gif">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 copy-right">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://codeforces.com/profile/arjun_singh12">
+                <span class="fa-stack fa-lg  footer-icons">
+                  <i class="fa fa-code"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/people/Arjun-Singh/100021213789739">
+                <span class="fa-stack fa-lg  footer-icons">
+                  <i class="fa fa-facebook"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/arjunsingh1212">
+                <span class="fa-stack fa-lg footer-icons">
+                  <i class="fa fa-github"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="text-center">© Copyright 2021 PeakProductivity</p>
+        </div>
+        <div class="col-lg-2 text-center">
+          <img src="images/thanks.gif">
+        </div>
       </div>
     </div>
   </footer>
@@ -336,4 +340,5 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
